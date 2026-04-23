@@ -4,8 +4,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080"
-    fetch(`${API_URL}/api/tutorials`)
+    fetch("/api/tutorials")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
