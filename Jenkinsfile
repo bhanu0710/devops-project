@@ -25,7 +25,7 @@ pipeline {
         stage('Update K8s YAML') {
             steps {
                 sh """
-                sed -i '' 's|backend-app:.*|backend-app:${BUILD_NUMBER}|g' k8s/backend-deployment.yaml
+                sed -i "s|backend-app:.*|backend-app:${BUILD_NUMBER}|g" k8s/backend-deployment.yaml
                 """
             }
         }
