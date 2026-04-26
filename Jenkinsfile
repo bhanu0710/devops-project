@@ -30,16 +30,18 @@ pipeline {
             }
         }
 
-        stage('Push Changes') {
-            steps {
-                sh """
-                git config user.name "bhanu0710"
-                git config user.email "brathore0710@gmail.com"
-                git add .
-                git commit -m "update image to ${BUILD_NUMBER}"
-                git push
-                """
-            }
-        }
+       stage('Push Changes') {
+    steps {
+        sh """
+        git config user.name "bhanu0710"
+        git config user.email "brathore0710@gmail.com"
+
+        git add .
+        git commit -m "update image to ${BUILD_NUMBER}"
+
+        git push origin HEAD:main
+        """
+    }
+}
     }
 }
