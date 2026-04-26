@@ -32,15 +32,21 @@ pipeline {
 
        stage('Push Changes') {
     steps {
-        sh """
-        git config user.name "bhanu0710"
-        git config user.email "brathore0710@gmail.com"
+        withCredentials([usernamePassword(
+            credentialsId: 'github-creds',
+            usernameVariable: 'GIT_USER',
+            passwordVariable: 'GIT_PASS'
+        )]) {
+            sh """
+            git config user.name "bhanu0710"
+            git config user.email "brathore0710@gmail.com"
 
-        git add .
-        git commit -m "update image to ${BUILD_NUMBER}"
+            git add .
+            git commit -m "update image to ${BUILD_NUMBER}"
 
-        git push origin HEAD:main
-        """
+            git push https://$GIT_USER:$GIT_PASS@github.com/bhanu0710/devops-project.git HEAD:main
+            """
+        }
     }
 }
     }
