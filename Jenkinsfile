@@ -8,12 +8,7 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/bhanu0710/devops-project.git'
-            }
-        }
-
+       
         stage('Build Image') {
             steps {
                 sh "docker build -t $IMAGE_NAME:${BUILD_NUMBER} ./node-express-mongodb"
