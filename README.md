@@ -1,5 +1,11 @@
 # 🚀 End-to-End DevOps Project (CI/CD + GitOps + Monitoring)
 
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Running-blue)
+![CI/CD](https://img.shields.io/badge/CI/CD-Jenkins-green)
+![GitOps](https://img.shields.io/badge/GitOps-ArgoCD-orange)
+![Docker](https://img.shields.io/badge/Container-Docker-blue)
+![Monitoring](https://img.shields.io/badge/Monitoring-Prometheus%20%2B%20Grafana-red)
+
 ## 📌 Overview
 
 This project demonstrates a **production-grade DevOps pipeline** using modern tools.
