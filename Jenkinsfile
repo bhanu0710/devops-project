@@ -11,11 +11,13 @@ pipeline {
        
         stage('Build Image') {
             steps {
+               sh """
                 docker buildx build \
-                --platform linux/amd64 \
-                -t bhanu0710/backend-app:${BUILD_NUMBER} \
-                --push \
-                ./node-express-mongodb
+                 --platform linux/amd64 \
+                 -t bhanu0710/backend-app:${BUILD_NUMBER} \
+                 --push \
+                 ./node-express-mongodb
+               """
             }
         }
 
